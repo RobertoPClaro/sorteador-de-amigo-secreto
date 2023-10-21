@@ -1,0 +1,38 @@
+.input {
+    width: 500px;
+    height: 82px;
+    top: 520px;
+    left: 149px;
+    border-radius: 37.5px 0px 0px 37.5px; 
+    border: 2px;
+
+    /* background: linear-gradient(0deg #000000 #000000)
+    linear-gradient(0deg #FFFFFF #FFFFFF); */
+
+    background: linear-gradient(0deg #000000 #000000)
+linear-gradient(0deg #FFFFFF #FFFFFF);
+
+
+    border: 2px solid #000000;
+
+    box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.button {
+    width: 227px;
+    height: 82px;
+    top: 520px;
+    left: 648px;
+    border-radius: 0px 37.5px 37.5px 0px;
+    border: 2px;
+    
+
+    background: linear-gradient(0deg #000000 #000000)
+    linear-gradient(0deg #C4C4C4 #C4C4C4);
+
+
+
+    border: 2px solid #000000;
+
+    box-shadow: 4px 4px 0px 0px #000000;
+}
