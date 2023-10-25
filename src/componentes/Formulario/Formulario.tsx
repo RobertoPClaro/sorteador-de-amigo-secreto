@@ -1,37 +1,39 @@
-import React, { useRef, useState } from 'react'
-import styles from './style.module.css'
-import { useAdicionarParticipante } from '../../state/hooks/useAdicionarParticipante';
-import { useMensagemDeErro } from '../../state/hooks/useMensagemDeErro';
+import { useRef, useState } from "react"
+import { useAdicionarParticipante } from "../../state/hook/useAdicionarParticipante"
+import { useMensagemDeErro } from "../../state/hook/useMensagemDeErro"
 
-export default function Formulario() {
+import './Formulario.css'
 
-  const [nome, setNome] = useState('');
+const Formulario = () => {
 
-  const inputRef =useRef<HTMLInputElement>(null)
+    const [nome, setNome] = useState('')
 
-  const adicionarNaLista = useAdicionarParticipante()
+    const inputRef = useRef<HTMLInputElement>(null)
 
-  const mensagemDeErro = useMensagemDeErro()
+    const adicionarNaLista = useAdicionarParticipante()
 
-  const adicionarParticipante = (evento: React.FormEvent<HTMLFormElement>) => {
-    evento.preventDefault()
-    adicionarNaLista(nome)
-    setNome('')
-    inputRef.current?.focus()
-  }
+    const mensagemDeErro = useMensagemDeErro()
 
-  return (
-    <form onSubmit={adicionarParticipante}>
-      <input
-        ref={inputRef}
-        className={styles.input}
-        type='text'
-        placeholder='Insira os nomes dos participantes'
-        value={nome}
-        onChange={evento => setNome(evento.target.value)}
-      />
-      <button className={styles.button} disabled={!nome}>Adicionar</button>
-      {mensagemDeErro && <p role='alert'>{mensagemDeErro}</p>}
-    </form>
-  )
+    const adicionarParticipante = (evento: React.FormEvent<HTMLFormElement>) => {
+        evento.preventDefault()
+        adicionarNaLista(nome)
+        setNome('')
+        inputRef.current?.focus()
+    }
+
+    return (<form onSubmit={adicionarParticipante}>
+        <div className="grupo-input-btn">
+            <input
+                ref={inputRef}
+                value={nome}
+                onChange={evento => setNome(evento.target.value)}
+                type="text"
+                placeholder="Insira os nomes dos participantes"
+            />
+            <button disabled={!nome}>Adicionar</button>
+        </div>
+        {mensagemDeErro && <p className="alerta erro" role="alert">{mensagemDeErro}</p>}
+    </form>)
 }
+
+export default Formulario
