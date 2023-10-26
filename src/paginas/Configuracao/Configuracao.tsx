@@ -1,7 +1,7 @@
-import Card from "../componentes/Card"
-import Formulario from "../componentes/Formulario/Formulario"
-import ListaParticipantes from "../componentes/ListaParticipantes/ListaParticipantes"
-import Rodape from "../componentes/Rodape/Rodape"
+import Card from "../../componentes/Card"
+import Formulario from "../../componentes/Formulario/Formulario"
+import ListaParticipantes from "../../componentes/ListaParticipantes/ListaParticipantes"
+import Rodape from "../../componentes/Rodape/Rodape"
 
 const Configuracao = () => {
     return (
